@@ -55,77 +55,84 @@
 
     <main id="home" class="main-z">
 
-      <!-- HERO -->
-      <section class="container section-hero">
-        <div class="hero-grid">
-          <div class="reveal" ref="heroLeft">
-            <div class="badge">
-              <span class="badge-dot"></span>
-              Premium cinematic video editing
-            </div>
-            <h1 class="hero-title">
-              Cinematic Video Editing That Turns Footage Into Stories
-            </h1>
-            <p class="hero-body">
-              Shubham creates polished edits for brands, creators, events, reels, YouTube, and commercial projects with film-inspired pacing, sharp rhythm, and a premium visual finish.
-            </p>
-            <div class="hero-btns">
-              <a href="#work" @click.prevent="scrollTo('work')" class="btn-white btn-shine">
-                View My Work
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
-                </svg>
-              </a>
-              <a href="#contact" @click.prevent="scrollTo('contact')" class="btn-ghost btn-shine">
-                Let's Create
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
-                  <path d="m21.854 2.147-10.94 10.939"></path>
-                </svg>
-              </a>
-            </div>
-            <div class="hero-cards">
-              <div class="glass hero-card">
-                <div class="card-label">Loading</div>
-                <div class="card-value">Loading cinematic showcase...</div>
-              </div>
-              <div class="glass hero-card">
-                <div class="card-label">Button Hover</div>
-                <div class="card-value">Hover for a subtle gold shimmer.</div>
-              </div>
-              <div class="glass hero-card">
-                <div class="card-label">Contact Time</div>
-                <div class="card-value">Response within 24 hours, usually sooner.</div>
-              </div>
-            </div>
-          </div>
+<!-- HERO -->
+<section class="container section-hero">
+  <div class="hero-grid">
+    <div class="reveal" ref="heroLeft">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Premium cinematic video editing
+      </div>
 
-          <div class="reveal hero-img-wrap" ref="heroRight">
-            <div class="glass hero-img-box">
-              <img
-                src="https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/hero-3953006b2e724a629e4d88f350eb008a.png"
-                alt="Cinematic video editor workspace with timelines and color grading screens"
-                class="hero-img"
-              />
-              <div class="hero-tags">
-                <div class="tape hero-tag">Cinematic pacing</div>
-                <div class="tape hero-tag">Sharp transitions</div>
-                <div class="tape hero-tag">Premium color</div>
-              </div>
-            </div>
-            <div class="glass hero-style-pill">
-              <div class="card-label">Style</div>
-              <div class="hero-style-val">Dark • Sharp • Film-inspired</div>
-            </div>
-          </div>
+      <h1 class="hero-title">
+        Turning Raw Footage Into Scroll-Stopping Stories
+      </h1>
+
+      <p class="hero-body">
+        I create high-quality edits for brands, creators, reels, YouTube, and commercials with sharp pacing, smooth transitions, and a premium cinematic finish.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#work" @click.prevent="scrollTo('work')" class="btn-white btn-shine">
+          View My Work
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path>
+          </svg>
+        </a>
+
+        <a href="#contact" @click.prevent="scrollTo('contact')" class="btn-ghost btn-shine">
+          Let's Create
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
+            <path d="m21.854 2.147-10.94 10.939"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero-cards">
+        <div class="glass hero-card">
+          <div class="card-label">Projects</div>
+          <div class="card-value">50+ Projects</div>
         </div>
-      </section>
 
-      <div class="gold-line"></div>
+        <div class="glass hero-card">
+          <div class="card-label">Response</div>
+          <div class="card-value">24Hr Response</div>
+        </div>
+
+        <div class="glass hero-card">
+          <div class="card-label">Experience</div>
+          <div class="card-value">4+ Years Experience</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal hero-img-wrap" ref="heroRight">
+      <div class="glass hero-img-box">
+        <img
+          src="https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/hero-3953006b2e724a629e4d88f350eb008a.png"
+          alt="Cinematic video editor workspace with timelines and color grading screens"
+          class="hero-img"
+        />
+
+        <div class="hero-tags">
+          <div class="tape hero-tag">Cinematic pacing</div>
+          <div class="tape hero-tag">Sharp transitions</div>
+          <div class="tape hero-tag">Premium color</div>
+        </div>
+      </div>
+
+      <div class="glass hero-style-pill">
+        <div class="card-label">Style</div>
+        <div class="hero-style-val">Dark • Sharp • Film-inspired</div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- INTRO -->
       <section class="container section-pad">
-        <div class="reveal intro-grid" ref="introRef">
+        <div class="reveal intro-grid" ref="introGrid">
           <div>
             <div class="section-tag gold">Intro</div>
             <h2 class="section-title">Raw footage becomes a polished cinematic experience.</h2>
