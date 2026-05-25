@@ -116,15 +116,15 @@
         />
 
         <div class="hero-tags">
-          <div class="tape hero-tag">Cinematic pacing</div>
-          <div class="tape hero-tag">Sharp transitions</div>
-          <div class="tape hero-tag">Premium color</div>
+          <div class="tape hero-tag">Smooth Transitions</div>
+          <div class="tape hero-tag">High-Retention Edits</div>
+          <div class="tape hero-tag">Professional Color Grade</div>
         </div>
       </div>
 
       <div class="glass hero-style-pill">
         <div class="card-label">Style</div>
-        <div class="hero-style-val">Dark • Sharp • Film-inspired</div>
+        <div class="hero-style-val">Dark • Clean • Modern</div>
       </div>
     </div>
   </div>
