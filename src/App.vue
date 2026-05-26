@@ -61,7 +61,7 @@
     <div class="reveal" ref="heroLeft">
       <div class="badge">
         <span class="badge-dot"></span>
-        Premium cinematic video editing
+        Professional Video Editing
       </div>
 
       <h1 class="hero-title">
