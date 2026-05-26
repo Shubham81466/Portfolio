@@ -627,10 +627,10 @@ textarea { resize: vertical; }
 .section-title {
   margin-top: 0.75rem;
   font-size: 1.875rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  letter-spacing: -0.04em;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 .card-label {
   font-size: 0.75rem;
@@ -777,9 +777,9 @@ textarea { resize: vertical; }
 }
 .hero-title {
   font-size: clamp(2.7rem, 6.2vw, 5.35rem);
-  font-weight: 600;
+  font-weight: 800;
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
   color: #fff;
   max-width: 48rem;
 }
@@ -787,8 +787,9 @@ textarea { resize: vertical; }
   margin-top: 1.5rem;
   max-width: 42rem;
   font-size: 1rem;
-  line-height: 1.75rem;
+  line-height: 1.5rem;
   color: #d4d4d8;
+  opacity: 0.8;
 }
 .hero-btns {
   margin-top: 2rem;
@@ -851,9 +852,10 @@ textarea { resize: vertical; }
 }
 .intro-body {
   font-size: 1.125rem;
-  line-height: 2rem;
+  line-height: 1.6rem;
   color: #d4d4d8;
   max-width: 48rem;
+  opacity: 0.8;
 }
 
 /* ─── WORK ────────────────────────────────────────────────── */
@@ -893,7 +895,8 @@ textarea { resize: vertical; }
 }
 .work-title {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: #fff;
 }
 .work-tag {
@@ -910,6 +913,8 @@ textarea { resize: vertical; }
   margin-top: 0.75rem;
   max-width: 36rem;
   color: #d4d4d8;
+  opacity: 0.8;
+  line-height: 1.5rem;
 }
 
 .portfolio-card { border-radius: 1.75rem; padding: 1.5rem; }
@@ -921,13 +926,16 @@ textarea { resize: vertical; }
 .portfolio-title {
   margin-top: 0.5rem;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: #fff;
 }
 .portfolio-desc {
   margin-top: 0.75rem;
   max-width: 42rem;
   color: #d4d4d8;
+  opacity: 0.8;
+  line-height: 1.5rem;
 }
 
 .empty-state {
@@ -948,6 +956,8 @@ textarea { resize: vertical; }
   margin-top: 1rem;
   max-width: 36rem;
   color: #d4d4d8;
+  opacity: 0.8;
+  line-height: 1.5rem;
 }
 .skills-tags {
   display: grid;
@@ -1016,8 +1026,9 @@ textarea { resize: vertical; }
   margin-top: 1.25rem;
   max-width: 42rem;
   font-size: 1.125rem;
-  line-height: 2rem;
+  line-height: 1.6rem;
   color: #d4d4d8;
+  opacity: 0.8;
 }
 
 /* ─── SERVICES ────────────────────────────────────────────── */
@@ -1042,16 +1053,17 @@ textarea { resize: vertical; }
 .contact-title {
   margin-top: 0.75rem;
   font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 600;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  letter-spacing: -0.05em;
   color: #fff;
 }
 .contact-body {
   margin-top: 1.25rem;
   max-width: 36rem;
   font-size: 1.125rem;
-  line-height: 2rem;
+  line-height: 1.6rem;
   color: #d4d4d8;
+  opacity: 0.8;
 }
 .contact-notice {
   margin-top: 1.5rem;
@@ -1119,7 +1131,8 @@ textarea { resize: vertical; }
 }
 .footer-name {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: #fff;
 }
 .footer-tagline { margin-top: 0.25rem; }
