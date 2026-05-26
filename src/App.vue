@@ -135,10 +135,10 @@
         <div class="reveal intro-grid" ref="introGrid">
           <div>
             <div class="section-tag gold">Intro</div>
-            <h2 class="section-title">Raw footage becomes a polished cinematic experience.</h2>
+            <h2 class="section-title">Editing Videos That Keep People Watching</h2>
           </div>
           <p class="intro-body">
-            I transform raw clips into intentional, emotionally driven edits with clean timing, refined motion, and professionalism that elevates every frame.
+            From reels to long-form videos, I turn raw footage into sharp, engaging content with clean transitions, refined motion, and impactful visuals.
           </p>
         </div>
       </section>
