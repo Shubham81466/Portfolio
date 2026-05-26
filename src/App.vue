@@ -102,7 +102,7 @@
 
         <div class="glass hero-card">
           <div class="card-label">Experience</div>
-          <div class="card-value">4+ Years Experience</div>
+          <div class="card-value">2+ Years Experience</div>
         </div>
       </div>
     </div>
