@@ -116,15 +116,15 @@
         />
 
         <div class="hero-tags">
-          <div class="tape hero-tag">Smooth Transitions</div>
-          <div class="tape hero-tag">High-Retention Edits</div>
-          <div class="tape hero-tag">Professional Color Grade</div>
+          <div class="tape hero-tag">Reels & Shorts</div>
+          <div class="tape hero-tag">YouTube Content</div>
+          <div class="tape hero-tag">Brand Videos</div>
         </div>
       </div>
 
       <div class="glass hero-style-pill">
         <div class="card-label">Style</div>
-        <div class="hero-style-val">Dark • Clean • Modern</div>
+        <div class="hero-style-val">Modern • Clean • Professional</div>
       </div>
     </div>
   </div>
