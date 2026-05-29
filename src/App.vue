@@ -427,7 +427,7 @@ function getDriveFileId(url) {
 
 function getDirectVideoUrl(url) {
   const fileId = getDriveFileId(url)
-  return fileId ? `https://drive.google.com/uc?id=${fileId}` : url
+  return fileId ? `https://drive.google.com/uc?export=download&id=${fileId}` : url
 }
 
 function getEmbedUrl(url) {
