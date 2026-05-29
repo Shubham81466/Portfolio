@@ -164,6 +164,7 @@
                 muted 
                 playsinline
                 preload="metadata"
+                :poster="p.img"
               >
                 <source :src="getDirectVideoUrl(p.videoUrl)" type="video/mp4" />
               </video>
