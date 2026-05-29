@@ -154,8 +154,17 @@
         </div>
 
         <div class="work-grid mt-10">
-          <article class="reveal glass work-card" v-for="(p, i) in projects" :key="i" ref="projectRefs">
-            <img :src="p.img" :alt="p.imgAlt" class="work-img" />
+          <article class="reveal glass work-card work-card--clickable" v-for="(p, i) in projects" :key="i" ref="projectRefs" @click="openVideo(p.videoUrl)">
+            <div class="work-img-container">
+              <img :src="p.img" :alt="p.imgAlt" class="work-img" />
+              <div class="work-play-overlay">
+                <div class="work-play-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+              </div>
+            </div>
             <div class="work-body">
               <div class="work-row">
                 <h3 class="work-title">{{ p.title }}</h3>
@@ -173,7 +182,7 @@
               <h3 class="portfolio-title">Cinematic Brand Reel</h3>
               <p class="portfolio-desc">Social Media Edit — smooth transitions, color correction, music sync, and cinematic pacing designed to feel premium and memorable.</p>
             </div>
-            <a href="#contact" @click.prevent="scrollTo('contact')" class="btn-gold btn-shine">
+            <a href="#" @click.prevent="openVideo('https://www.youtube.com/watch?v=EngW7tLk6R8')" class="btn-gold btn-shine">
               Watch Project
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="m12.296 3.464 3.02 3.956"></path>
@@ -324,6 +333,21 @@
         <div class="footer-copy">© 2026 Shubham. All rights reserved.</div>
       </div>
     </footer>
+
+    <!-- VIDEO MODAL POPUP (LIGHTBOX) -->
+    <div class="video-modal-overlay" v-if="activeVideoUrl" @click.self="closeVideo">
+      <div class="glass video-modal-content">
+        <button class="video-modal-close" @click="closeVideo" aria-label="Close video">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="video-modal-player">
+          <iframe :src="getEmbedUrl(activeVideoUrl)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -331,6 +355,7 @@
 import { ref, onMounted, reactive } from 'vue'
 
 const mobileOpen = ref(false)
+const activeVideoUrl = ref('')
 
 const form = reactive({
   name: '',
@@ -345,30 +370,57 @@ const projects = [
     tag: 'Short-form',
     desc: 'Fast, premium edits designed to hook instantly with punchy cuts, refined motion, and a cinematic finish.',
     img: 'https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/reel-d7f449f626db4ffc890385d2bd026b42.png',
-    imgAlt: 'Portfolio preview image for cinematic reels with dynamic social media visuals'
+    imgAlt: 'Portfolio preview image for cinematic reels with dynamic social media visuals',
+    videoUrl: 'https://www.youtube.com/watch?v=EngW7tLk6R8'
   },
   {
     title: 'YouTube Videos',
     tag: 'Long-form',
     desc: 'Clean storytelling, polished pacing, and retention-focused edits that keep the narrative moving from start to finish.',
     img: 'https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/youtube-9b1e4ed6356842b9a762124631045c4a.png',
-    imgAlt: 'YouTube thumbnail style image showing a cinematic creator studio setup'
+    imgAlt: 'YouTube thumbnail style image showing a cinematic creator studio setup',
+    videoUrl: 'https://www.youtube.com/watch?v=e_041_d-TGE'
   },
   {
     title: 'Event Highlights',
     tag: 'Emotion',
     desc: 'Memorable recap edits with rhythm, atmosphere, and premium storytelling that makes each moment feel larger than life.',
     img: 'https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/event-5cecfc2ca760403a9b47bd6e6cc1a444.png',
-    imgAlt: 'Event highlights preview image with stage lighting and cinematic crowd atmosphere'
+    imgAlt: 'Event highlights preview image with stage lighting and cinematic crowd atmosphere',
+    videoUrl: 'https://www.youtube.com/watch?v=EngW7tLk6R8'
   },
   {
     title: 'Brand Promos',
     tag: 'Commercial',
     desc: 'Sharp, elevated brand edits that blend motion, clarity, and style into a compelling visual message.',
     img: 'https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/brand-0d2874548bf54f50b1cf718c052574bd.png',
-    imgAlt: 'Brand promo preview image with polished commercial lighting and luxury product reflections'
+    imgAlt: 'Brand promo preview image with polished commercial lighting and luxury product reflections',
+    videoUrl: 'https://www.youtube.com/watch?v=e_041_d-TGE'
   }
 ]
+
+function openVideo(url) {
+  activeVideoUrl.value = url
+}
+
+function closeVideo() {
+  activeVideoUrl.value = ''
+}
+
+function getEmbedUrl(url) {
+  if (!url) return ''
+  let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  let match = url.match(regExp);
+  if (match && match[2].length === 11) {
+    return `https://www.youtube.com/embed/${match[2]}?autoplay=1`;
+  }
+  let vimeoReg = /vimeo\.com\/(\d+)/;
+  let vimeoMatch = url.match(vimeoReg);
+  if (vimeoMatch) {
+    return `https://player.vimeo.com/video/${vimeoMatch[1]}?autoplay=1`;
+  }
+  return url;
+}
 
 const skills = [
   'Video Editing', 'Color Grading', 'Sound Design',
@@ -1175,5 +1227,135 @@ textarea { resize: vertical; }
 
 @media (min-width: 1280px) {
   .skills-tags { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ─── VIDEO LIGHTBOX MODAL ───────────────────────────────── */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.video-modal-close:hover {
+  background: rgba(251, 191, 36, 0.8);
+  border-color: #fbbf24;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.video-modal-player {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-modal-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Clickable project card custom overlay */
+.work-card--clickable {
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
+}
+.work-card--clickable:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(251, 191, 36, 0.4);
+}
+
+.work-img-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card--clickable:hover .work-play-overlay {
+  opacity: 1;
+}
+
+.work-play-btn {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(251, 191, 36, 0.5);
+  background: rgba(251, 191, 36, 0.2);
+  backdrop-filter: blur(8px);
+  color: #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3px; /* visual alignment of play polygon */
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s, color 0.2s;
+  box-shadow: 0 0 25px rgba(251, 191, 36, 0.2);
+}
+
+.work-card--clickable:hover .work-play-btn {
+  transform: scale(1);
+}
+
+.work-play-btn:hover {
+  background: #fbbf24;
+  color: #000;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 </style>
