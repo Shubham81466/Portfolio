@@ -969,6 +969,15 @@ textarea { resize: vertical; }
   height: 18rem;
   object-fit: cover;
   display: block;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform, filter;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  filter: brightness(0.88) contrast(1.02);
+}
+.work-card--clickable:hover .work-img {
+  transform: scale(1.03);
+  filter: brightness(1.05) contrast(1.05);
 }
 .work-body { padding: 1.5rem; }
 .work-row {
