@@ -157,7 +157,7 @@
           <article class="reveal glass work-card work-card--clickable" v-for="(p, i) in projects" :key="i" ref="projectRefs" @click="openVideo(p.videoUrl)">
             <div class="work-img-container">
               <video 
-                v-if="p.videoUrl" 
+                v-if="p.teaserUrl || p.videoUrl" 
                 class="work-img" 
                 autoplay 
                 loop 
@@ -166,7 +166,7 @@
                 preload="metadata"
                 :poster="p.img"
               >
-                <source :src="getDirectVideoUrl(p.videoUrl)" type="video/mp4" />
+                <source :src="p.teaserUrl || getDirectVideoUrl(p.videoUrl)" type="video/mp4" />
               </video>
               <img v-else :src="p.img" :alt="p.imgAlt" class="work-img" />
               <div class="work-play-overlay">
@@ -383,7 +383,8 @@ const projects = [
     desc: 'Fast, premium edits designed to hook instantly with punchy cuts, refined motion, and a cinematic finish.',
     img: 'https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/reel-d7f449f626db4ffc890385d2bd026b42.png',
     imgAlt: 'Portfolio preview image for cinematic reels with dynamic social media visuals',
-    videoUrl: 'https://drive.google.com/file/d/1YZ6kP2Cfl1Dhhb8PLWce9GgM7wGETcDg/view?usp=drive_link'
+    videoUrl: 'https://drive.google.com/file/d/1YZ6kP2Cfl1Dhhb8PLWce9GgM7wGETcDg/view?usp=drive_link',
+    teaserUrl: '/Video Project 1.mp4'
   },
   {
     title: 'YouTube Videos',
@@ -391,7 +392,8 @@ const projects = [
     desc: 'Clean storytelling, polished pacing, and retention-focused edits that keep the narrative moving from start to finish.',
     img: 'https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/youtube-9b1e4ed6356842b9a762124631045c4a.png',
     imgAlt: 'YouTube thumbnail style image showing a cinematic creator studio setup',
-    videoUrl: 'https://drive.google.com/file/d/1s4yL4agxZYKvuu67jyRiMgwDIBt0sAsG/view?usp=drive_link'
+    videoUrl: 'https://drive.google.com/file/d/1s4yL4agxZYKvuu67jyRiMgwDIBt0sAsG/view?usp=drive_link',
+    teaserUrl: '/Video Project 2.mp4'
   },
   {
     title: 'Event Highlights',
@@ -399,7 +401,8 @@ const projects = [
     desc: 'Memorable recap edits with rhythm, atmosphere, and premium storytelling that makes each moment feel larger than life.',
     img: 'https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/event-5cecfc2ca760403a9b47bd6e6cc1a444.png',
     imgAlt: 'Event highlights preview image with stage lighting and cinematic crowd atmosphere',
-    videoUrl: 'https://drive.google.com/file/d/1uV2qRvWf16PqNMZ_Lq24RQa63Dfh6Ydq/view?usp=drive_link'
+    videoUrl: 'https://drive.google.com/file/d/1uV2qRvWf16PqNMZ_Lq24RQa63Dfh6Ydq/view?usp=drive_link',
+    teaserUrl: '/Video Project 3.mp4'
   },
   {
     title: 'Brand Promos',
@@ -407,7 +410,8 @@ const projects = [
     desc: 'Sharp, elevated brand edits that blend motion, clarity, and style into a compelling visual message.',
     img: 'https://cdn.landing-page.io/ai-landingpage/html-generate/33b5e29e-a48a-4dff-af13-d1d681494cba/images/brand-0d2874548bf54f50b1cf718c052574bd.png',
     imgAlt: 'Brand promo preview image with polished commercial lighting and luxury product reflections',
-    videoUrl: 'https://drive.google.com/file/d/1a1pJt3oWHXzo3mR4vVI-0eCMN5ZKJLVs/view?usp=drive_link'
+    videoUrl: 'https://drive.google.com/file/d/1a1pJt3oWHXzo3mR4vVI-0eCMN5ZKJLVs/view?usp=drive_link',
+    teaserUrl: '/Video Project 4.mp4'
   }
 ]
 
